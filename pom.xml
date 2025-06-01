@@ -21,13 +21,13 @@
 
   <parent>
     <groupId>org.mybatis</groupId>
-    <artifactId>mybatis-parent</artifactId>
+    <artifactId>mybatis-parent-debug</artifactId>
     <version>31</version>
     <relativePath />
   </parent>
 
   <artifactId>mybatis</artifactId>
-  <version>3.5.4</version>
+  <version>3.5.4-my-debug-snapshot</version>
   <packaging>jar</packaging>
 
   <name>mybatis</name>
