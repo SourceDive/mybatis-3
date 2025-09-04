@@ -18,6 +18,7 @@ package org.apache.ibatis.session;
 import java.sql.Connection;
 
 /**
+ * <p>内部和外部的边界。一个适配器。</p>
  * @author Clinton Begin
  */
 public enum TransactionIsolationLevel {

@@ -18,12 +18,14 @@ package org.apache.ibatis.session;
 import java.sql.Connection;
 
 /**
+ * <p>工厂：生产 sql session。</p>
  * Creates an {@link SqlSession} out of a connection or a DataSource
  *
  * @author Clinton Begin
  */
 public interface SqlSessionFactory {
 
+  // 下面都是同一个方法名 openSession 的重写。
   SqlSession openSession();
 
   SqlSession openSession(boolean autoCommit);
