@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2009-2019 the original author or authors.
+       Copyright 2009-2025 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -550,9 +550,9 @@ User findByColumn(@Param("column") String column, @Param("value") String value);
           in which the <code>${column}</code> will be substituted directly and the <code>#{value}</code> will be "prepared".
           Thus you can just do the same work by:
           <source><![CDATA[
-User userOfId1 = userMapper.findByColumn("id", 1L);
-User userOfNameKid = userMapper.findByColumn("name", "kid");
-User userOfEmail = userMapper.findByColumn("email", "noone@nowhere.com");
+User userOfId1 = userDao.findByColumn("id", 1L);
+User userOfNameKid = userDao.findByColumn("name", "kid");
+User userOfEmail = userDao.findByColumn("email", "noone@nowhere.com");
 ]]></source>
         </p>
 
