@@ -28,12 +28,14 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.transaction.Transaction;
 
 /**
+ * <p>执行数据库操作的统一入口。</p>
  * @author Clinton Begin
  */
 public interface Executor {
 
   ResultHandler NO_RESULT_HANDLER = null;
 
+  /// 基础查询
   int update(MappedStatement ms, Object parameter) throws SQLException;
 
   <E> List<E> query(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey cacheKey, BoundSql boundSql) throws SQLException;
@@ -44,16 +46,19 @@ public interface Executor {
 
   List<BatchResult> flushStatements() throws SQLException;
 
+  /// 事务相关
   void commit(boolean required) throws SQLException;
 
   void rollback(boolean required) throws SQLException;
 
+  /// 缓存
   CacheKey createCacheKey(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql);
 
   boolean isCached(MappedStatement ms, CacheKey key);
 
   void clearLocalCache();
 
+  /// 延迟加载
   void deferLoad(MappedStatement ms, MetaObject resultObject, String property, CacheKey key, Class<?> targetType);
 
   Transaction getTransaction();

@@ -16,8 +16,9 @@
 package org.apache.ibatis.mapping;
 
 /**
+ * <p>对应 JDBC 中的三种语句类型。</p>
  * @author Clinton Begin
  */
 public enum StatementType {
-  STATEMENT, PREPARED, CALLABLE
+  STATEMENT, PREPARED /*PreparedStatement*/, CALLABLE /*CallableStatement*/
 }

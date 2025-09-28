@@ -19,6 +19,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
+ * <p>包装一个数据库连接。</p>
+ * <p>管理功能：commit/rollback/close 一个数据库连接。</p>
  * Wraps a database connection.
  * Handles the connection lifecycle that comprises: its creation, preparation, commit/rollback and close.
  *

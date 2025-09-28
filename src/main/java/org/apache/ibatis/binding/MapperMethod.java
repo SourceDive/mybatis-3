@@ -39,6 +39,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 /**
+ * <p>映射方法。</p>
  * @author Clinton Begin
  * @author Eduardo Macarron
  * @author Lasse Voss
@@ -46,6 +47,7 @@ import org.apache.ibatis.session.SqlSession;
  */
 public class MapperMethod {
 
+  // sql 命令信息
   private final SqlCommand command;
   private final MethodSignature method;
 
@@ -218,7 +220,7 @@ public class MapperMethod {
 
   public static class SqlCommand {
 
-    private final String name;
+    private final String name; // 方法的全限定形式。
     private final SqlCommandType type;
 
     public SqlCommand(Configuration configuration, Class<?> mapperInterface, Method method) {
@@ -274,9 +276,9 @@ public class MapperMethod {
 
   public static class MethodSignature {
 
-    private final boolean returnsMany;
-    private final boolean returnsMap;
-    private final boolean returnsVoid;
+    private final boolean returnsMany; // 是否返回集合
+    private final boolean returnsMap; // 是否返回Map
+    private final boolean returnsVoid; // 是否返回void
     private final boolean returnsCursor;
     private final boolean returnsOptional;
     private final Class<?> returnType;

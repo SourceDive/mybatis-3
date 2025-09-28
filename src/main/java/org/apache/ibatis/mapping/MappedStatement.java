@@ -29,6 +29,7 @@ import org.apache.ibatis.scripting.LanguageDriver;
 import org.apache.ibatis.session.Configuration;
 
 /**
+ * <p>映射语句。</p>
  * @author Clinton Begin
  */
 public final class MappedStatement {
@@ -38,14 +39,14 @@ public final class MappedStatement {
   private String id;
   private Integer fetchSize;
   private Integer timeout;
-  private StatementType statementType;
+  private StatementType statementType; // 语句类型。
   private ResultSetType resultSetType;
   private SqlSource sqlSource;
   private Cache cache;
   private ParameterMap parameterMap;
-  private List<ResultMap> resultMaps;
-  private boolean flushCacheRequired;
-  private boolean useCache;
+  private List<ResultMap> resultMaps; // 结果映射列表。
+  private boolean flushCacheRequired; // 是否要清空缓存。
+  private boolean useCache; // 是否使用缓存。
   private boolean resultOrdered;
   private SqlCommandType sqlCommandType;
   private KeyGenerator keyGenerator;

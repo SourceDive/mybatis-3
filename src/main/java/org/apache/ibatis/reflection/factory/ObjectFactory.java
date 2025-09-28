@@ -34,6 +34,9 @@ public interface ObjectFactory {
   }
 
   /**
+   * <p>
+   * 创建对象：使用默认无参构造。
+   * </p>
    * Creates a new object with default constructor.
    * @param type Object type
    * @return
@@ -41,6 +44,7 @@ public interface ObjectFactory {
   <T> T create(Class<T> type);
 
   /**
+   * <p>创建对象：使用给定的构造器。</p>
    * Creates a new object with the specified constructor and params.
    * @param type Object type
    * @param constructorArgTypes Constructor argument types

@@ -27,6 +27,7 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
 
 /**
+ * <p>mapper文件注册表。</p>
  * @author Clinton Begin
  * @author Eduardo Macarron
  * @author Lasse Voss
@@ -34,12 +35,14 @@ import org.apache.ibatis.session.SqlSession;
 public class MapperRegistry {
 
   private final Configuration config;
+  // mapper class -> 工厂
   private final Map<Class<?>, MapperProxyFactory<?>> knownMappers = new HashMap<>();
 
   public MapperRegistry(Configuration config) {
     this.config = config;
   }
 
+  // 调用即创建。
   @SuppressWarnings("unchecked")
   public <T> T getMapper(Class<T> type, SqlSession sqlSession) {
     final MapperProxyFactory<T> mapperProxyFactory = (MapperProxyFactory<T>) knownMappers.get(type);
@@ -53,10 +56,14 @@ public class MapperRegistry {
     }
   }
 
+  /**
+   * mapper 是否已注册。
+   */
   public <T> boolean hasMapper(Class<T> type) {
     return knownMappers.containsKey(type);
   }
 
+  // 注册 mapper 类型。
   public <T> void addMapper(Class<T> type) {
     if (type.isInterface()) {
       if (hasMapper(type)) {
@@ -80,6 +87,7 @@ public class MapperRegistry {
   }
 
   /**
+   * <p>获取所有的 mapper 类型集合。</p>
    * @since 3.2.2
    */
   public Collection<Class<?>> getMappers() {
@@ -87,6 +95,7 @@ public class MapperRegistry {
   }
 
   /**
+   * <p>注册 mapper 类型。</p>
    * @since 3.2.2
    */
   public void addMappers(String packageName, Class<?> superType) {
@@ -99,6 +108,7 @@ public class MapperRegistry {
   }
 
   /**
+   * <p>注册 mapper 类型。</p>
    * @since 3.2.2
    */
   public void addMappers(String packageName) {
