@@ -150,10 +150,13 @@ public abstract class BaseExecutor implements Executor {
     List<E> list;
     try {
       queryStack++;
+      // 没有结果处理器时使用缓存
       list = resultHandler == null ? (List<E>) localCache.getObject(key) : null;
+      // 存在缓存
       if (list != null) {
         handleLocallyCachedOutputParameters(ms, key, parameter, boundSql);
       } else {
+        // 直接查询数据库
         list = queryFromDatabase(ms, parameter, rowBounds, resultHandler, key, boundSql);
       }
     } finally {

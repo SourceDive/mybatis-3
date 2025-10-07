@@ -42,7 +42,7 @@ public final class MappedStatement {
   private StatementType statementType; // 语句类型。
   private ResultSetType resultSetType;
   private SqlSource sqlSource;
-  private Cache cache;
+  private Cache cache; // 二级缓存
   private ParameterMap parameterMap;
   private List<ResultMap> resultMaps; // 结果映射列表。
   private boolean flushCacheRequired; // 是否要清空缓存。

@@ -35,9 +35,10 @@ public interface Executor {
 
   ResultHandler NO_RESULT_HANDLER = null;
 
-  /// 基础查询
+  /// insert/update/delete 都被视为 update
   int update(MappedStatement ms, Object parameter) throws SQLException;
 
+  /// 基础查询
   <E> List<E> query(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey cacheKey, BoundSql boundSql) throws SQLException;
 
   <E> List<E> query(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler) throws SQLException;

@@ -16,6 +16,8 @@
 package org.apache.ibatis.session;
 
 /**
+ * <p>结果处理器。</p>
+ * <p>对查询结构二次处理。</p>
  * @author Clinton Begin
  */
 public interface ResultHandler<T> {
