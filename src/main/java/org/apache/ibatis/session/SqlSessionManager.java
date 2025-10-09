@@ -37,6 +37,7 @@ public class SqlSessionManager implements SqlSessionFactory, SqlSession {
   private final SqlSessionFactory sqlSessionFactory;
   private final SqlSession sqlSessionProxy;
 
+  // SqlSession 在每个线程内部是单例的。
   private final ThreadLocal<SqlSession> localSqlSession = new ThreadLocal<>();
 
   private SqlSessionManager(SqlSessionFactory sqlSessionFactory) {

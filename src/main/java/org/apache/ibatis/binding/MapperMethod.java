@@ -40,6 +40,7 @@ import org.apache.ibatis.session.SqlSession;
 
 /**
  * <p>映射方法。</p>
+ * <p>封装 mapper 中的方法。</p>
  * @author Clinton Begin
  * @author Eduardo Macarron
  * @author Lasse Voss

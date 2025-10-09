@@ -39,7 +39,8 @@ import org.apache.ibatis.transaction.Transaction;
  */
 public class ReuseExecutor extends BaseExecutor {
 
-  private final Map<String, Statement> statementMap = new HashMap<>();
+  // 缓存 Statement 对象。
+  private final Map<String/* sql */, Statement> statementMap = new HashMap<>();
 
   public ReuseExecutor(Configuration configuration, Transaction transaction) {
     super(configuration, transaction);
@@ -82,6 +83,7 @@ public class ReuseExecutor extends BaseExecutor {
     Statement stmt;
     BoundSql boundSql = handler.getBoundSql();
     String sql = boundSql.getSql();
+    // 查看缓存中是否存在
     if (hasStatementFor(sql)) {
       stmt = getStatement(sql);
       applyTransactionTimeout(stmt);

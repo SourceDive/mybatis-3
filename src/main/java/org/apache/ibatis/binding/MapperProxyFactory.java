@@ -52,6 +52,7 @@ public class MapperProxyFactory<T> {
 
   /**
    * 这里是此工厂的职责
+   * <p>注意是非静态的方法。</p>
    */
   public T newInstance(SqlSession sqlSession) {
     final MapperProxy<T> mapperProxy = new MapperProxy<>(sqlSession, mapperInterface, methodCache);

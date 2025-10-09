@@ -19,6 +19,7 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 /**
+ * <p>数据源工厂：获取数据源。</p>
  * @author Clinton Begin
  */
 public interface DataSourceFactory {

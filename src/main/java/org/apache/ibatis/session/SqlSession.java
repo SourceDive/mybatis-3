@@ -24,6 +24,8 @@ import org.apache.ibatis.cursor.Cursor;
 import org.apache.ibatis.executor.BatchResult;
 
 /**
+ * <p>面向用户的API</p>
+ * <p>是 executor 的外观。</p>
  * The primary Java interface for working with MyBatis.
  * Through this interface you can execute commands, get mappers and manage transactions.
  *

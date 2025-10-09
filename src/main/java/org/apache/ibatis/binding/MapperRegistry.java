@@ -36,7 +36,7 @@ public class MapperRegistry {
 
   private final Configuration config;
   // mapper class -> 工厂
-  private final Map<Class<?>, MapperProxyFactory<?>> knownMappers = new HashMap<>();
+  private final Map<Class<?>/*mapper*/, MapperProxyFactory<?>> knownMappers = new HashMap<>();
 
   public MapperRegistry(Configuration config) {
     this.config = config;

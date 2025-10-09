@@ -598,6 +598,7 @@ public class Configuration {
     return newExecutor(transaction, defaultExecutorType);
   }
 
+  // 工厂方法：根据类型创建对应的执行器。
   public Executor newExecutor(Transaction transaction, ExecutorType executorType) {
     executorType = executorType == null ? defaultExecutorType : executorType;
     executorType = executorType == null ? ExecutorType.SIMPLE : executorType;
