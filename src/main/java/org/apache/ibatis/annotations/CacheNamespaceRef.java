@@ -22,6 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * <p>引入其他命名空间的缓存。</p>
  * The annotation that reference a cache.
  *
  * <p>If you use this annotation, should be specified either {@link #value()} or {@link #name()} attribute.

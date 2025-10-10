@@ -58,6 +58,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
+   * <p>使连接失效。</p>
    * Invalidates the connection.
    */
   public void invalidate() {
@@ -65,6 +66,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
+   * <p>判断连接是否可用。</p>
    * Method to see if the connection is usable.
    *
    * @return True if the connection is usable
@@ -74,6 +76,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
+   * <p>获取目标连接。</p>
    * Getter for the *real* connection that this wraps.
    *
    * @return The connection
@@ -83,6 +86,7 @@ class PooledConnection implements InvocationHandler {
   }
 
   /**
+   * <p>获取代理连接对象。</p>
    * Getter for the proxy for the connection.
    *
    * @return The proxy

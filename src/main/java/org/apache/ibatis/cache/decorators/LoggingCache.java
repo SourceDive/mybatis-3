@@ -56,6 +56,7 @@ public class LoggingCache implements Cache {
     if (value != null) {
       hits++;
     }
+    // 这里会打印二级缓存命中的信息。
     if (log.isDebugEnabled()) {
       log.debug("Cache Hit Ratio [" + getId() + "]: " + getHitRatio());
     }

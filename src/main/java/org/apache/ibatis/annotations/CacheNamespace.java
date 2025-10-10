@@ -26,6 +26,7 @@ import org.apache.ibatis.cache.decorators.LruCache;
 import org.apache.ibatis.cache.impl.PerpetualCache;
 
 /**
+ * <p>开启二级缓存使用的注解。</p>
  * The annotation that specify to use cache on namespace(e.g. mapper interface).
  *
  * <p><br>

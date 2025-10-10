@@ -66,6 +66,7 @@ public class PerpetualCache implements Cache {
     cache.clear();
   }
 
+  // 两个 cache 的id相同，就是一样的。
   @Override
   public boolean equals(Object o) {
     if (getId() == null) {
